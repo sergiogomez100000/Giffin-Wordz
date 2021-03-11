@@ -3,6 +3,7 @@ const apiKeyGiphy = "F9EV2crSkhvqoTLa3t0KEM15VzdKISVG";
 const gifContainer = document.querySelector("#gif-container");
 const searchBar = document.querySelector("#searchBar");
 const submitBtn = document.querySelector("#submitBtn");
+const apiKeyWebster = "b8d63f50-7aed-4699-a007-51ec78791ac1"
 
 function getGif(searchQuery) {
   const giphyUrl = `https://api.giphy.com/v1/gifs/random?tag=${searchQuery}&api_key=${apiKeyGiphy}`;
@@ -19,6 +20,9 @@ function getGif(searchQuery) {
     });
 }
 
+function getDefinition(searchQuery){
+  const websterUrl= `https://www.dictionaryapi.com/api/v3/references/collegiate/json/voluminous?key=${apiKeyWebster}`
+}
 function handleSubmit(){
   const input = searchBar.value;
   getGif(input)
