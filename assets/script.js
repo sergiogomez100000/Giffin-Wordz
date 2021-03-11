@@ -1,14 +1,19 @@
 // create API key for gif
 const apiKeyGiphy = "F9EV2crSkhvqoTLa3t0KEM15VzdKISVG";
+//create  variable for gif  container
 const gifContainer = document.querySelector("#gif-container");
+//create var for searchbar 
 const searchBar = document.querySelector("#searchBar");
+//create variable for submitBtn
 const submitBtn = document.querySelector("#submitBtn");
+//create var for webster api key
 const apiKeyWebster = "b8d63f50-7aed-4699-a007-51ec78791ac1"
 
 function getGif(searchQuery) {
   const giphyUrl = `https://api.giphy.com/v1/gifs/random?tag=${searchQuery}&api_key=${apiKeyGiphy}`;
   console.log(giphyUrl);
   fetch(giphyUrl)
+    //convert data into .json making it readable
     .then((data) => data.json())
     .then((data) => {
       console.log(data);
