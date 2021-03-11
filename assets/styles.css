@@ -1,0 +1,8 @@
+.hero {
+    text-align: center;
+    background-color: rgb(102, 163, 241);
+}
+
+.hero p {
+    color: white;
+}
