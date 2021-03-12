@@ -9,6 +9,16 @@ const searchBar = document.querySelector("#searchBar");
 //create variable for submitBtn
 const submitBtn = document.querySelector("#submitBtn");
 //create var for webster api key
+const favBtn = document.querySelector("#favBtn");
+
+let currentGifUrl = "";
+
+// create var favArr assigning the parsed stringified array in local storage under favGifsSave, reading this from favGifsSave and if nothing there reads empty array
+function getFavArr (){
+return JSON.parse(localStorage.getItem("favGifsSave")) || [];
+}
+let favArr = getFavArr()
+
 const apiKeyWebster = "b8d63f50-7aed-4699-a007-51ec78791ac1"
 
 function getGif(searchQuery) {
@@ -18,9 +28,10 @@ function getGif(searchQuery) {
     //convert data into .json making it readable
     .then((data) => data.json())
     .then((data) => {
+      currentGifUrl = data.data.image_url
       //console.log(data);
       const imgEl = document.createElement("img")
-      imgEl.setAttribute("src", data.data.image_url)
+      imgEl.setAttribute("src", currentGifUrl)
       gifContainer.innerHTML = ""
      gifContainer.append(imgEl)
       //console.log(typeof imgEl)
@@ -35,12 +46,17 @@ function getDefinition(searchQuery){
     console.log(data);
     // targets short def in search query
     console.log(data[0])
+
     //empties defContainer
     defContainer.innerHTML = ""
 
+    const h1El = document.createElement("h1")
+    h1El.textContent = searchBar.value
+    defContainer.append(h1El)
+
     //creates p tag el  //updates defEL text content to array // appends defEL (adds) to defContainer
     const defEl = document.createElement("p")
-   defEl.textContent ="Definition: " + (data[0].shortdef[0])
+    defEl.textContent ="Definition: " + (data[0].shortdef[0])
     defContainer.append(defEl);
 
      
@@ -74,13 +90,16 @@ function handleSubmit(){
   //console.log(input)
 }
 submitBtn.addEventListener("click", handleSubmit);
-// getGif("cats");
 
-// create API key for Dictionary
-// var input on form
-// create function to access API info gif (fetch and var for url)
-// create function to access API info dictionary (fetch and var for url)
-// local storage for gif favorite button
-// append and/or local storage for word that was searched
-// event listener for submit button
-// event listener for favorite button
+favBtn.addEventListener("click", handleSave);
+
+// when fav button hit, push fav gif array into local storage, array push method, then restore with stringify
+function handleSave(){
+  favArr = getFavArr()
+  // if current gif url is empty or has something in it get out
+if(currentGifUrl === "" || favArr.includes(currentGifUrl)) return;
+favArr.push(currentGifUrl)
+localStorage.setItem("favGifsSave", JSON.stringify(favArr))
+}
+
+
