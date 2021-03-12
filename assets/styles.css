@@ -3,6 +3,16 @@
     background-color: rgb(102, 163, 241);
 }
 
-.hero p {
-    color: white;
+.hero p{
+    color:white;
+}
+
+#def-container {
+    background-color: orangered;
+}
+
+#gif-container {
+    background-color: palegreen;
+    width: 50%;
+    height: 50%;
 }
