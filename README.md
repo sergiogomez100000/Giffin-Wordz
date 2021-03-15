@@ -1,5 +1,6 @@
 # Project Title: 
 Giffin Werdz
+<img src="./assets/sampleGiffinWerdz.png">
 
 # Project Description: 
 A fun way to increase vocabulary and understand definitions with the help of gifs.
