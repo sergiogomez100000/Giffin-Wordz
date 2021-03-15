@@ -1,0 +1,64 @@
+.hero {
+    text-align: center;
+    background-color: rgb(102, 163, 241);
+    border: black 2px solid;
+}
+
+.hero p{
+    color:white;
+}
+
+#def-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px;
+    line-height: 40px;
+    font-size: 20px;
+}
+
+#def-container h1 {
+    font-size: 50px;
+    font-weight: bold;
+    font-family: Helvetica, sans-serif;
+}
+
+#def-container [word~=Case] {
+    font-weight: bold;
+    background-color: blue;
+}
+
+#gif-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#gif-container img {
+    border: rgb(102, 163, 241) solid;
+    border-width: 10px;
+}
+
+#favorite-container {
+    flex-wrap:wrap;
+    justify-content: center;
+}
+
+#favorite-container img {
+    border: rgb(102, 163, 241) solid;
+    border-width: 10px;
+    margin: 10px;
+}
+
+.search-word {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 10rem;
+}
+
+

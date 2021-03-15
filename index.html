@@ -1,12 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Giffin Werdz</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giffin Werdz</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <!-- This is our jumbotron -->
+    <section class="hero is-small">
+      <div class="hero-body">
+        <p class="title">
+          Giffin Werdz
+        </p>
+        <p class="subtitle">
+          Learn to master words with GIFs!
+        </p>
+        <a href="favGifs.html">Check out your favorites here.</a>
+      </div>
+    </section>
+    <!-- This is where our input and submit button are -->
+    <div class="search-word container">
+      <input class="input is-medium" id="searchBar" type="text" placeholder="Enter word" />
+      <div><button class="button is-primary padding-vertical" id="submitBtn" >Submit</button>
+        <button class="button is-link padding-vertical" id="favBtn" >Fav Gifs</button>
+      </div>
+    </div>
+    <div id="def-container">
+    </div>
+    <div id="gif-container">
+    </div>
+    <script src="assets/script.js"></script>
+  </body>
 </html>
