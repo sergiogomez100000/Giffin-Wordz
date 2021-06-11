@@ -3,7 +3,7 @@ Giffin Werdz
 <img src="./assets/sampleGiffinWerdz.png">
 
 # Project Description: 
-A fun way to increase vocabulary and understand definitions with the help of gifs.
+For those who want a fun way to learn, or a better way to associate words with definitions, this app is a fun way to increase vocabulary and understand definitions with the help of gifs.
 
 # User story:
 
